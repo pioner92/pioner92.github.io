@@ -7,7 +7,7 @@
       name="description"
       content="Portfolio of Alex Shumihin, Senior React Native engineer focused on JSI, C++, native modules, performance, and mobile architecture."
     />
-    <title>Alex Shumihin | Senior React Native Engineer</title>
+    <title>Alex Shumihin | Low-Level React Native Infrastructure Engineer</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,10 +27,9 @@
         <span>Alex Shumihin</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#work">Open Source</a>
         <a href="#expertise">Expertise</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
+        <a href="#research">Research</a>
+        <a href="#work">Projects</a>
       </nav>
     </header>
 
@@ -39,15 +38,22 @@
         <div class="hero-copy">
           <div class="eyebrow">
             <span class="status-dot"></span>
-            Senior React Native Engineer
+            Low-level React Native Infrastructure
           </div>
           <h1>Alex Shumihin</h1>
-          <p class="hero-role">React Native Performance Engineer</p>
+          <p class="hero-role">React Native + C++ + JSI performance engineer.</p>
           <p class="hero-lead">
-            I work on the parts of React Native where native architecture,
-            low-latency data flow, rendering performance, and JSI/C++ modules
-            decide how the product feels.
+            I build bridge-free native modules, binary data pipelines, runtime
+            integrations, and performance-critical mobile infrastructure where
+            JavaScript is not allowed to be the bottleneck.
           </p>
+          <div class="hero-specialties" aria-label="Specialized engineering areas">
+            <span>JSI / TurboModules</span>
+            <span>C++ native core</span>
+            <span>AVFoundation</span>
+            <span>Runtime internals</span>
+            <span>Zero-copy buffers</span>
+          </div>
           <div class="hero-actions">
             <a class="button button-primary" href="https://github.com/pioner92" target="_blank" rel="noreferrer">
               <span>GitHub</span>
@@ -78,16 +84,22 @@
               <strong>10</strong>
               <span>RN libraries</span>
             </div>
+            <div>
+              <strong>2</strong>
+              <span>Margelo articles</span>
+            </div>
           </div>
         </aside>
       </section>
 
       <section class="ticker" aria-label="Core stack">
-        <strong>Core stack</strong>
+        <strong>Rare mix</strong>
         <div>
           <span>JSI</span>
           <span>C++</span>
           <span>TurboModules</span>
+          <span>AVFoundation</span>
+          <span>Runtime internals</span>
           <span>Swift</span>
           <span>Kotlin</span>
           <span>Skia</span>
@@ -99,38 +111,134 @@
 
       <section class="section split" id="expertise">
         <div class="section-heading">
-          <p class="kicker">Engineering Focus</p>
-          <h2>Performance, native modules, and React Native internals.</h2>
+          <p class="kicker">Deep Expertise</p>
+          <h2>Low-level React Native infrastructure, not just app screens.</h2>
           <div class="focus-list">
-            <span>Open-source libraries with native JSI/C++ implementations</span>
-            <span>Performance-critical logic moved off the JavaScript thread</span>
-            <span>Reusable UI and data infrastructure for mobile apps</span>
+            <span>JSI bindings and C++ cores for hot paths</span>
+            <span>Binary buffers, hashing, IDs, base64, and native schedulers</span>
+            <span>Runtime-aware design around threads, memory, and bridge overhead</span>
           </div>
         </div>
         <div class="expertise-grid">
           <article class="feature">
             <span class="feature-index">01</span>
-            <h3>Performance & Native Architecture</h3>
+            <h3>JSI, C++ & Runtime Boundaries</h3>
             <p>
-              JSI modules, C++ critical paths, native threading, binary buffers,
-              SQLite, WatermelonDB, and bridge-free flows for low-latency apps.
+              Native modules designed around direct JSI access, reduced bridge
+              pressure, predictable memory behavior, and C++ execution for
+              latency-sensitive work.
             </p>
           </article>
           <article class="feature">
             <span class="feature-index">02</span>
-            <h3>Advanced UI & Rendering</h3>
+            <h3>Binary Data & Media Pipelines</h3>
             <p>
-              Smooth gesture-heavy interfaces with Reanimated, Gesture Handler,
-              Skia, custom animations, and reusable UI infrastructure.
+              ArrayBuffer transport, image buffers, hashing, base64, native
+              schedulers, SQLite/WatermelonDB flows, and media integrations such
+              as AVFoundation.
             </p>
           </article>
           <article class="feature">
             <span class="feature-index">03</span>
-            <h3>Native Product Integrations</h3>
+            <h3>Rendering & Product Delivery</h3>
             <p>
-              Swift, Kotlin, Java, Objective-C, subscriptions, push, deep links,
-              REST, GraphQL, WebSockets, App Store, and Google Play delivery.
+              Smooth interactions with Reanimated, Gesture Handler, Skia, plus
+              native iOS/Android integrations, releases, CI/CD, and production
+              ownership.
             </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section research" id="research">
+        <div class="section-title-row">
+          <div>
+            <p class="kicker">Performance Research</p>
+            <h2>Benchmarks that expose where React Native actually spends time.</h2>
+          </div>
+          <p class="section-note">Representative benchmark themes from native-module research and open-source work.</p>
+        </div>
+        <div class="research-grid">
+          <article class="chart-card">
+            <div class="chart-head">
+              <h3>JS bridge vs JSI call path</h3>
+              <span>bridge-free</span>
+            </div>
+            <div class="bars" aria-label="Bridge overhead comparison">
+              <div style="--value: 88%"><span>Bridge serialization</span><strong>high</strong></div>
+              <div style="--value: 34%"><span>JSI direct binding</span><strong>low</strong></div>
+            </div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <h3>Array vs ArrayBuffer transport</h3>
+              <span>zero-copy</span>
+            </div>
+            <div class="bars" aria-label="Array buffer transport comparison">
+              <div style="--value: 78%"><span>JS arrays</span><strong>copy-heavy</strong></div>
+              <div style="--value: 26%"><span>Columnar ArrayBuffer</span><strong>zero-copy</strong></div>
+            </div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <h3>Work moved off JS thread</h3>
+              <span>up to 10x</span>
+            </div>
+            <div class="runtime-map">
+              <span>JS thread</span>
+              <strong>JSI boundary</strong>
+              <span>C++ / native thread</span>
+            </div>
+            <p>Keep parsing, hashing, scheduling, media, and buffer operations outside UI-critical JavaScript work.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section published-research" id="published">
+        <div class="section-title-row">
+          <div>
+            <p class="kicker">Published Research</p>
+            <h2>Authored engineering articles on React Native internals.</h2>
+          </div>
+          <p class="section-note">Published engineering research on React Native internals, JSI boundaries, data layout, and native performance.</p>
+        </div>
+        <div class="article-grid">
+          <article class="article-card">
+            <div class="article-meta">Authored by Alex Shumihin · Published on Margelo Blog · Apr 23, 2026</div>
+            <h3>How to Make Pure JSI Code Faster in React Native</h3>
+            <p>
+              A deep dive into JSI performance: HostFunction vs HostObject,
+              NativeState, stack allocation, and reducing JS ↔ C++ crossings,
+              with benchmarks showing where the real gains come from.
+            </p>
+            <div class="tags">
+              <span>JSI</span>
+              <span>React Native</span>
+              <span>C++</span>
+              <span>Performance</span>
+            </div>
+            <a class="article-link" href="https://blog.margelo.com/make-jsi-run-faster" target="_blank" rel="noreferrer">
+              Read on Margelo Blog
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5h-2V8.41l-7.29 7.3-1.42-1.42 7.3-7.29H14V5Z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
+          </article>
+          <article class="article-card">
+            <div class="article-meta">Authored by Alex Shumihin · Published on Margelo Blog · Apr 28, 2026</div>
+            <h3>Making JSI Faster with more Efficient Data Structures</h3>
+            <p>
+              How data shape, API design, and string building impact JSI
+              performance, with real benchmarks and up to 30x speedups.
+            </p>
+            <div class="tags">
+              <span>JSI</span>
+              <span>React Native</span>
+              <span>C++</span>
+              <span>Data layout</span>
+            </div>
+            <a class="article-link" href="https://blog.margelo.com/make-jsi-run-faster-2" target="_blank" rel="noreferrer">
+              Read on Margelo Blog
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5h-2V8.41l-7.29 7.3-1.42-1.42 7.3-7.29H14V5Z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+            </a>
           </article>
         </div>
       </section>
@@ -138,8 +246,8 @@
       <section class="section" id="work">
         <div class="section-title-row">
           <div>
-            <p class="kicker">Open Source</p>
-            <h2>Pinned React Native libraries</h2>
+            <p class="kicker">Architecture Case Studies</p>
+            <h2>Open-source libraries as proof of low-level execution.</h2>
           </div>
           <a class="text-link" href="https://github.com/pioner92?tab=repositories" target="_blank" rel="noreferrer">
             View all repositories
@@ -254,7 +362,7 @@
       <section class="section stack-panel" id="stack">
         <div>
           <p class="kicker">Stack</p>
-          <h2>Native-grade React Native toolkit.</h2>
+          <h2>Native-grade React Native infrastructure toolkit.</h2>
         </div>
         <div class="stack-cloud">
           <span>React Native</span>
@@ -262,6 +370,7 @@
           <span>C++</span>
           <span>Swift</span>
           <span>Kotlin</span>
+          <span>AVFoundation</span>
           <span>Objective-C</span>
           <span>Java</span>
           <span>Reanimated</span>
@@ -280,9 +389,10 @@
           <p class="kicker">About</p>
           <h2>About my work</h2>
           <p>
-            My work is centered around low-latency mobile systems, native
-            modules, smooth UI infrastructure, and practical React Native
-            libraries used by the community.
+            My work sits at the boundary between React Native and native
+            runtimes: JSI, C++, Swift/Kotlin, AVFoundation, binary data,
+            rendering, memory, and the runtime internals that decide whether a
+            mobile product feels instant or heavy.
           </p>
         </div>
         <div class="contact-actions">
