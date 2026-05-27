@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Alex Shumihin — React Native + C++ + JSI Performance Engineer</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#071014">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -115,6 +122,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     // The manifest bytes are ours; SRI protects against CDN compromise, not this.
     template = template.replace(/\s+integrity="[^"]*"/gi, '').replace(/\s+crossorigin="[^"]*"/gi, '');
 
+    const faviconMarkup = [
+      '<link rel="icon" href="assets/favicon.ico" sizes="any">',
+      '<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">',
+      '<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">',
+      '<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">',
+      '<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">',
+      '<link rel="manifest" href="assets/site.webmanifest">',
+      '<meta name="theme-color" content="#071014">'
+    ].join('\n') + '\n';
     const resourceScript = '<script>window.__resources = ' +
       JSON.stringify(resourceMap).split('</' + 'script>').join('<\\/' + 'script>') +
       ';</' + 'script>';
@@ -126,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const headOpen = template.match(/<head[^>]*>/i);
     if (headOpen) {
       const i = headOpen.index + headOpen[0].length;
-      template = template.slice(0, i) + resourceScript + template.slice(i);
+      template = template.slice(0, i) + resourceScript + '\n' + faviconMarkup + template.slice(i);
     }
 
     // Parse the template and swap the root element. Scripts inserted via
